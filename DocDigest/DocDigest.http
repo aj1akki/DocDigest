@@ -1,0 +1,6 @@
+@DocDigest_HostAddress = http://localhost:5201
+
+GET {{DocDigest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
