@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export abstract class AbstractHttpService<T> {
   protected baseUrl: string = environment.apiBaseUrl;  // Load the base URL from environment config
 
