@@ -11,20 +11,31 @@ export class PdfUploaderComponent {
   public form: FormGroup;
   public pdfSrc: SafeUrl | null = null;
   public error: string | null = null;
+  public iframeHeight: number |null = null;
+
   constructor(private fb: FormBuilder, private sanitizer: DomSanitizer) {
     this.form = this.fb.group({
-       pdfFile: [null] 
-      });
+      pdfFile: [null]
+    });
+  }
+
+  ngOnInit() {
+    this.calculateIframeHeight();
   }
 
   onFileChange(event: any) {
     const file = (event.target as HTMLInputElement).files?.[0];
-    if (file && file.type === 'application/pdf') {
+    if (file && (file.type === 'application/pdf')) {
       this.error = null;
       const fileUrl = URL.createObjectURL(file);
       this.pdfSrc = this.sanitizer.bypassSecurityTrustResourceUrl(fileUrl);
     } else {
-      this.error = 'Please select a valid PDF file.';
+      this.error = 'Please select a valid PDF or DOCX file.';
     }
+  }
+
+  private calculateIframeHeight() {
+    const offset = 125; // Adjust this offset as needed to match your layout
+    this.iframeHeight = window.innerHeight - offset;
   }
 }

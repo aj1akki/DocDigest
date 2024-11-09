@@ -14,6 +14,7 @@
   </div>
 
   <div *ngIf="pdfSrc" class="pdf-preview bg-dark text-center p-3">
-    <iframe [src]="pdfSrc" width="100%" height="400px"></iframe>
+    <iframe [src]="pdfSrc" width="100%" [style.height.px]="iframeHeight"></iframe>
   </div>
+  
 </div>
