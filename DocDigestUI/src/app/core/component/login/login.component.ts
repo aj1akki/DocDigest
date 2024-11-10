@@ -10,7 +10,13 @@ import { AuthService } from 'app/core/services/auth/auth.service';
 export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
+  loginWithGoogle() {
+    this.authService.login();
+  }
+  loginWithMicrosoft() {
+    this.authService.login();
+  }
+  loginWithFacebook() {
     this.authService.login();
   }
   ngOnInit() {

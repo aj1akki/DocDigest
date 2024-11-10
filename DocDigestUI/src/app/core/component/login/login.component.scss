@@ -1,0 +1,97 @@
+/* login.component.scss */
+
+/* Container for the login section */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Limiting the width */
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid transparent; /* Default transparent border */
+  background-clip: padding-box; /* Ensure the border is outside the box shadow */
+
+  /* Adding a cool border effect */
+  position: relative;
+  z-index: 0;
+
+  /* Hover effect to add a glowing border and more pronounced shadow */
+  &:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    border-color: #2575fc; /* Blue border on hover */
+  }
+
+  /* Border glow effect */
+  &:before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    background: linear-gradient(45deg, #ff6ec7, #ff9a44); /* Gradient border color */
+    z-index: -1;
+    border-radius: 12px; /* Matching border-radius */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1; /* Show the border glow effect on hover */
+  }
+}
+
+/* Button styles */
+.social-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  
+  i {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* Google button styling */
+.google-btn {
+  background-color: #db4437;
+  color: white;
+  
+  &:hover {
+    background-color: #c1351d;
+  }
+}
+
+/* Microsoft button styling */
+.microsoft-btn {
+  background-color: #0078d4;
+  color: white;
+  
+  &:hover {
+    background-color: #005ba1;
+  }
+}
+
+/* Facebook button styling */
+.facebook-btn {
+  background-color: #3b5998;
+  color: white;
+  
+  &:hover {
+    background-color: #2d4373;
+  }
+}

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+/* Import specific font weights */
+@import '~@fontsource/poppins/700.css';  /* Bold */
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+  }

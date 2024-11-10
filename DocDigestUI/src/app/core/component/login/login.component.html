@@ -1,1 +1,30 @@
-<button type="button" class="btn btn-primary" (click)="login()">Login with Google Account</button>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="login-container">
+      <h1>Login</h1>
+  
+      <!-- Google Login Button -->
+      <button 
+        type="button" 
+        class="btn social-btn google-btn" 
+        (click)="loginWithGoogle()">
+        <i class="fa fa-google fa-3x" aria-hidden="true"></i> Login with Google
+      </button>
+  
+      <!-- Microsoft Login Button -->
+      <button 
+        type="button" 
+        class="btn social-btn microsoft-btn" 
+        (click)="loginWithMicrosoft()">
+        <i class="fa fa-windows fa-3x"></i> Login with Microsoft
+      </button>
+  
+      <!-- Facebook Login Button -->
+      <button 
+        type="button" 
+        class="btn social-btn facebook-btn" 
+        (click)="loginWithFacebook()">
+        <i class="fa fa-facebook fa-3x"></i> Login with Facebook
+      </button>
+    </div>
+  </div>
+  
