@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { PdfUploaderComponent } from './components/pdf-uploader/pdf-uploader.component';
+import { PdfUploaderComponent } from './components/modules/dashboard/pdf-uploader/pdf-uploader.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
