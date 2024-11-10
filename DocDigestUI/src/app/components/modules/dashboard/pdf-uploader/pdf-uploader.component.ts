@@ -29,10 +29,10 @@ export class PdfUploaderComponent {
     if (file && (file.type === 'application/pdf')) {
       this.error = null;
       this.pdfUploaderService.uploadPdf(file).subscribe({
-        next: (response) => {
+        next: (response:any) => {
           console.log('Upload successful', response);
         },
-        error: (error) => {
+        error: (error: any) => {
           console.error('Upload failed', error);
         }
       });

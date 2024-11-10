@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace DocDigest.Controllers
 {
@@ -7,9 +6,11 @@ namespace DocDigest.Controllers
     [ApiController]
     public class PdfUploaderController : ControllerBase
     {
+        
         [HttpPost("upload")]
         public async Task<IActionResult> UploadPdf(IFormFile file)
         {
+            // Access Authorization header
             if (file == null || file.Length == 0)
             {
                 return BadRequest("No file uploaded or file is empty.");

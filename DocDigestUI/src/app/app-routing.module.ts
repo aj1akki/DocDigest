@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
+import { LoginComponent } from './core/component/login/login.component';
+import { SigninOidcComponent } from './core/component/signin-oidc/signin-oidc.component';
 
 const routes: Routes = [
-  // Optional: Redirect to dashboard on root path
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, 
+  { path: '', component:LoginComponent }, 
+  { path: 'signin-oidc', component: SigninOidcComponent },
   {
     path: 'dashboard',
-    loadChildren: () => import('../app/components/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+    canActivate: [AuthGuard],
+    loadChildren: () => import('../app/components/modules/dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   
 ];
