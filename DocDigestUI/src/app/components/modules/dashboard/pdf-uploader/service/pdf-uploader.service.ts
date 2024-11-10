@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AbstractHttpService } from 'app/core/services/abstract-http.service';
 import { Observable } from 'rxjs';
-import { environment } from 'app/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class PdfUploaderService {
-  constructor(private http: HttpClient) {}
+export class PdfUploaderService extends AbstractHttpService {
 
   uploadPdf(file: File): Observable<any> {
     const formData = new FormData();
     formData.append('file', file, file.name);
 
-    // Prepend the base URL from environment
-    const apiUrl = `${environment.apiBaseUrl}/pdfUploader/upload`;
-
-    return this.http.post(apiUrl, formData);
+    return this.post('pdfUploader/upload', formData); 
   }
 }
